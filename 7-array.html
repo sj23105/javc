@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> array test </title>
+    </head>
+    <body>
+        <h3> make array </h3>
+        <hr>
+        <script>
+            var plots = [20, 5, 8, 15, 21];
+            plots[5] = 69;
+            document.write("var plots = [");
+            var arsize = plots.length;
+            for( var i = 0; i < plots.length; i++)
+            {
+                if(i == plots.length - 1)
+                    document.write(plots[i]);
+                else
+                    document.write(plots[i] + ", ");
+            }
+            document.write("] <br>")
+
+            for(var i = 0; i < plots.length; i++)
+            {
+                for(var j = 1; j <= plots[i]; j++)
+                {
+                    document.write("*")
+                }
+                document.write(plots[i] + "<br>");
+            }
+            
+        </script>
+    </body>
+</html>
