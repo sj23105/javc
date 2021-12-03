@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>account</title>
+        <script>
+            
+            function Account(owner, password, leftmoney)
+            {
+                this.owner = owner;
+                this.password = password;
+                this.leftmoney = leftmoney;
+
+                this.inquiry = function () { return this.leftmoney; } //조회
+                this.deposit = function (money) { this.leftmoney += money; } //입금
+                this.withdraw = function (money) { this.leftmoney -= money; } //인출
+            }
+        </script>
+    </head>
+    <body>
+        <h3> 프로토타입 만들기 </h3>
+        <hr>
+        <script>
+            var name, pword, leftm, choose, money;
+
+            name = prompt("이름을 입력하세요.");
+            pword = prompt("비밀번호를 입력하세요.");
+            leftm = Number(prompt("잔액을 입력하세요."));
+
+            var account = new Account(name, pword, leftm);
+
+            document.write("account - 성함 : ");
+            document.write(account.owner + ", 비밀번호 : ");
+            document.write(account.password + ", 잔액 : ");
+            document.write(account.leftmoney + "원 <br>");
+            while(true)
+            {
+                choose = prompt("업무를 선택하세요. (1 : 입금, 2 : 인출, 3: 종료)");
+                if(choose == 1)
+                {
+                    money = Number(money = prompt("얼마를 입금하시겠습니까?"));
+                    account.deposit(money);
+                    document.write(money + "원 입금 후 잔액은 " + account.inquiry() + "원 입니다. <br>");
+                }
+                else if(choose == 2)
+                {
+                    money = prompt("얼마를 인출하시겠습니까?");
+                    account.withdraw(money);
+                    document.write(money + "원 출금 후 잔액은 " + account.inquiry() + "원 입니다. <br>");         
+                }
+                else
+                {
+                    document.write("종료 <br>");
+                    break;
+                }
+            }
+        </script>
+    </body>
+</html>
