@@ -45,8 +45,16 @@
                 else if(choose == 2)
                 {
                     money = prompt("얼마를 인출하시겠습니까?");
-                    account.withdraw(money);
-                    document.write(money + "원 출금 후 잔액은 " + account.inquiry() + "원 입니다. <br>");         
+                    if(money > account.leftmoney)
+                    {
+                        document.write("계좌 잔액이 인출금액 " + money + "원보다 부족하여 인출에 실패하였습니다.");
+                        break;
+                    }
+                    else
+                    {
+                        account.withdraw(money);
+                        document.write(money + "원 출금 후 잔액은 " + account.inquiry() + "원 입니다. <br>");
+                    }
                 }
                 else
                 {
