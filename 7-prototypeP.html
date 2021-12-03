@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> prototype practice</title>
+        <script>
+            function student(name, score)
+            {
+                this.univ = "한국대학";
+                this.name = name;
+                this.score = score;
+
+                this.getRank = function()
+                {
+                    if(score >= 90)
+                        return "A";
+                    else if(score >= 80)
+                        return "B";
+                    else if(score >= 70)
+                        return "C";
+                    else if(score >= 60)
+                        return "D";
+                    else
+                        return "F";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h3>프로토타입 연습</h3>
+        <hr>
+        <script>
+            var Kitae = new student("황기태", 93);
+            var Minsu = new student("김민수", 73);
+
+            document.write(Kitae.univ + ", " + Kitae.name + "의 학점은 " + Kitae.getRank() +"입니다. <br>" );
+            document.write(Minsu.univ + ", " + Minsu.name + "의 학점은 " + Minsu.getRank() +"입니다. <br>" );
+        </script>
+        2
+        <hr>
+        <script>
+            var Kitae = new student("황기태", 93);
+            var Minsu = new student("김민수", 73);
+
+            document.write(Kitae.univ + ", " + Kitae.name + "의 학점은 " + Kitae.getRank() +"입니다. <br>" );
+            document.write(Minsu.univ + ", " + Minsu.name + "의 학점은 " + Minsu.getRank() +"입니다. <br>" );
+        </script>
+    </body>
+</html>
